@@ -1,16 +1,27 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import random
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def create_domino_set():
+    new_domino_set = []
+    for a in range(7):
+        for b in range(7):
+            if b >= a:
+                new_domino_set.append([a, b])
+    random.shuffle(new_domino_set)
+    return new_domino_set
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+stock_pieces = create_domino_set()
+computer_pieces = stock_pieces[:7]
+player_pieces = stock_pieces[7:14]
+stock_pieces = stock_pieces[14:]
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+domino_snake = None
+status = None
+
+print("Stock pieces:", stock_pieces)
+print("Computer pieces:", computer_pieces)
+print("Player pieces:", player_pieces)
+print("Domino snake:", domino_snake)
+print("Status:", status)
+
